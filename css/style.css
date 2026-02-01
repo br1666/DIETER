@@ -19,8 +19,8 @@
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
     
     --max-width: 1200px;
 }
@@ -111,15 +111,35 @@ header nav ul {
     gap: var(--spacing-sm) var(--spacing-md);
 }
 
+header nav li {
+    display: flex;
+}
+
 header nav a {
     font-size: 0.875rem;
     font-weight: 400;
     padding: var(--spacing-xs) 0;
     position: relative;
-    color: var(--color-gray-700);
+    color: var(--color-gray-500);
 }
 
-header nav a::after {
+/* Página activa en navegación */
+header nav a.active {
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+header nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-black);
+}
+
+header nav a:not(.active)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -130,7 +150,7 @@ header nav a::after {
     transition: width 0.3s ease;
 }
 
-header nav a:hover::after {
+header nav a:not(.active):hover::after {
     width: 100%;
 }
 
@@ -151,13 +171,15 @@ main {
 }
 
 main section {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
 }
 
+/* Títulos centrados en todas las páginas */
 main section h2 {
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
     border-bottom: 1px solid var(--color-gray-200);
+    text-align: center;
 }
 
 main hr {
@@ -169,7 +191,7 @@ main hr {
 /* === PÁGINA INICIO === */
 main > section:first-child {
     text-align: center;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
 }
 
 main > section:first-child img {
@@ -202,12 +224,14 @@ main video {
 }
 
 /* ============================================
-   PÁGINA ABOUT - TIMELINE CORREGIDO
+   PÁGINA ABOUT - TIMELINE MEJORADO
    ============================================ */
 .timeline-section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
     width: 100%;
-    overflow: hidden;
+   /* overflow: hidden;*/
+    overflow-x: auto;
+    overflow-y: visible; 
 }
 
 .timeline-section h2 {
@@ -231,11 +255,11 @@ main video {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 100px;
+    gap: 120px;
     flex: 1;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 200px 60px;
+    padding: 320px 80px; /* Más altura */
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -245,13 +269,13 @@ main video {
     display: none;
 }
 
-/* Línea horizontal que va de extremo a extremo */
+/* Línea horizontal completa */
 .timeline-horizontal::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 0;
-    width: 200%;
+    width: 590%;
     height: 2px;
     background-color: var(--color-black);
     transform: translateY(-50%);
@@ -264,7 +288,7 @@ main video {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 220px;
+    min-width: 200px;
     flex-shrink: 0;
     z-index: 2;
 }
@@ -272,8 +296,8 @@ main video {
 .timeline-item::after {
     content: "";
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     background-color: var(--color-black);
     border: 3px solid var(--color-white);
     border-radius: 50%;
@@ -301,49 +325,50 @@ main video {
 
 .content {
     position: absolute;
-    width: 200px;
+    width: 180px;
     text-align: center;
     z-index: 5;
 }
 
 .content.top {
     bottom: 50%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .content.bottom {
     top: 50%;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
+/* Imágenes sin cortar */
 .content img {
     width: 100%;
-    height: 150px;
+    height: 120px;
     object-fit: contain;
     background-color: var(--color-white);
     border: 1px solid var(--color-gray-200);
     border-radius: 4px;
-    margin-bottom: 12px;
-    padding: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
 }
 
 .content p {
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.75rem;
+    line-height: 1.4;
     color: var(--color-gray-700);
     background-color: var(--color-gray-50);
-    padding: var(--spacing-xs);
+    padding: 8px;
     border-radius: 4px;
     margin: 0;
 }
 
 .nav-btn {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     background-color: var(--color-white);
     border: 2px solid var(--color-black);
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
     flex-shrink: 0;
@@ -352,7 +377,7 @@ main video {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .nav-btn:hover {
@@ -362,12 +387,12 @@ main video {
 
 .video-section {
     text-align: center;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
 }
 
 .video-section h2 {
     border-bottom: none;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
 }
 
 .video-principal {
@@ -392,18 +417,18 @@ main section img + p {
     text-align: center;
     color: var(--color-gray-500);
     font-size: 0.875rem;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 /* ============================================
-   PÁGINA PRINCIPLES - GRILLA COMPLETA
+   PÁGINA PRINCIPLES - GRILLA COMPACTA
    ============================================ */
 .principles-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(3, 180px);
-    gap: 12px;
-    margin-bottom: var(--spacing-lg);
+    grid-template-rows: repeat(3, 160px);
+    gap: 8px;
+    margin-bottom: var(--spacing-md);
     width: 100%;
 }
 
@@ -421,24 +446,27 @@ main section img + p {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Imágenes que ocupan todo el cuadro */
 .principle-card img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 15px;
-    background: var(--color-white);
+    object-fit: cover;
+    background: var(--color-gray-50);
 }
 
 .principle-card__number {
     position: absolute;
-    top: 8px;
-    left: 10px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(--color-gray-500);
+    top: 6px;
+    left: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-gray-600);
+    background: rgba(255,255,255,0.9);
+    padding: 2px 6px;
+    border-radius: 2px;
 }
 
-/* Grid que ocupa TODO el espacio */
+/* Grid compacto sin espacios vacíos */
 .principle-card:nth-child(1) {
     grid-column: 1 / 5;
     grid-row: 1 / 3;
@@ -461,7 +489,7 @@ main section img + p {
 
 .principle-card:nth-child(5) {
     grid-column: 5 / 7;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
 }
 
 .principle-card:nth-child(6) {
@@ -471,33 +499,12 @@ main section img + p {
 
 .principle-card:nth-child(7) {
     grid-column: 7 / 9;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
 }
 
 .principle-card:nth-child(8) {
     grid-column: 9 / 11;
     grid-row: 1 / 2;
-}
-
-.principle-card:nth-child(9) {
-    grid-column: 9 / 11;
-    grid-row: 2 / 3;
-}
-
-.principle-card:nth-child(10) {
-    grid-column: 11 / 13;
-    grid-row: 1 / 2;
-}
-
-/* Llenar espacios vacíos - extender cards */
-.principle-card:nth-child(5) {
-    grid-column: 5 / 7;
-    grid-row: 2 / 4;
-}
-
-.principle-card:nth-child(7) {
-    grid-column: 7 / 9;
-    grid-row: 2 / 4;
 }
 
 .principle-card:nth-child(9) {
@@ -514,13 +521,13 @@ main section img + p {
 .principle-detail {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: var(--spacing-lg);
-    padding-top: var(--spacing-lg);
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-md);
     border-top: 1px solid var(--color-gray-200);
 }
 
 .principle-detail__number {
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 200;
     line-height: 1;
     color: var(--color-gray-300);
@@ -528,24 +535,24 @@ main section img + p {
 
 .principle-detail__content h3 {
     font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
     color: var(--color-black);
 }
 
 .principle-detail__content p {
     color: var(--color-gray-700);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 /* ============================================
-   PÁGINA PRODUCTS - ESTILO WIREFRAME
+   PÁGINA PRODUCTS
    ============================================ */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 .product-card {
@@ -574,8 +581,8 @@ main section img + p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background: var(--color-white);
     border: 1px solid var(--color-gray-300);
     border-radius: 50%;
@@ -583,7 +590,7 @@ main section img + p {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: var(--color-gray-500);
     transition: all 0.2s ease;
 }
@@ -595,11 +602,11 @@ main section img + p {
 }
 
 .product-card__nav--prev {
-    left: 10px;
+    left: 8px;
 }
 
 .product-card__nav--next {
-    right: 10px;
+    right: 8px;
 }
 
 .product-card__content {
@@ -607,42 +614,31 @@ main section img + p {
 }
 
 .product-card__title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 400;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 4px;
     color: var(--color-black);
 }
 
 .product-card__description {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--color-gray-500);
-    line-height: 1.5;
+    line-height: 1.4;
     margin: 0;
 }
 
 /* ============================================
-   FOOTER - MINIMALISTA ESTILO RAMS
+   FOOTER - SIN CÍRCULOS, SOLO TEXTO
    ============================================ */
 footer {
     border-top: 1px solid var(--color-gray-200);
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-md);
     background: var(--color-white);
 }
 
-footer address {
+footer address,
+footer > p:not(.copyright) {
     display: none;
-}
-
-footer > p {
-    display: none;
-}
-
-.footer-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 footer ul,
@@ -655,45 +651,25 @@ footer nav ul {
     flex-wrap: wrap;
 }
 
+/* Sin círculos, solo texto */
 footer ul a,
-footer nav ul a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    opacity: 1;
-}
-
-footer ul a:hover,
-footer nav ul a:hover {
-    opacity: 0.6;
-}
-
-/* Círculos para iconos */
-footer ul a::before,
-footer nav ul li a::before {
-    content: '';
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--color-gray-300);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-footer ul a:hover::before,
-footer nav ul li a:hover::before {
-    border-color: var(--color-black);
-}
-
-footer ul a,
+footer nav ul a,
 footer nav ul li a {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--color-gray-500);
     font-weight: 400;
     letter-spacing: 0.02em;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+footer ul a:hover,
+footer nav ul a:hover,
+footer nav ul li a:hover {
+    color: var(--color-black);
+    border-bottom-color: var(--color-black);
+    opacity: 1;
 }
 
 footer ul a h6 {
@@ -707,11 +683,11 @@ footer nav ul li {
     display: contents;
 }
 
-/* Copyright minimalista */
+/* Copyright */
 footer .copyright {
     text-align: center;
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
     border-top: 1px solid var(--color-gray-100);
     font-size: 0.7rem;
     color: var(--color-gray-400);
@@ -733,7 +709,7 @@ body > hr {
 @media (max-width: 900px) {
     .principles-grid {
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(5, 120px);
+        grid-template-rows: repeat(5, 100px);
     }
     
     .principle-card:nth-child(1) {
@@ -789,8 +765,8 @@ body > hr {
 
 @media (max-width: 768px) {
     :root {
-        --spacing-lg: 3rem;
-        --spacing-xl: 4rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
     }
     
     header {
@@ -806,22 +782,26 @@ body > hr {
     }
     
     .timeline-horizontal {
-        gap: 80px;
-        padding: 180px 50px;
+        gap: 100px;
+        padding: 220px 60px;
     }
     
     .timeline-item {
-        min-width: 180px;
+        min-width: 160px;
     }
     
     .content {
-        width: 160px;
+        width: 150px;
+    }
+    
+    .content img {
+        height: 100px;
     }
     
     .nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.25rem;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
     }
     
     .products-grid {
@@ -830,7 +810,7 @@ body > hr {
     
     .principles-grid {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(6, 100px);
+        grid-template-rows: repeat(6, 80px);
     }
     
     .principle-card:nth-child(1) {
@@ -885,11 +865,11 @@ body > hr {
     
     .principle-detail {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
     }
     
     .principle-detail__number {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     
     footer ul,
@@ -897,30 +877,26 @@ body > hr {
         gap: var(--spacing-sm);
     }
     
-    footer ul a::before,
-    footer nav ul li a::before {
-        width: 40px;
-        height: 40px;
-    }
-    
     footer ul a,
+    footer nav ul a,
     footer nav ul li a {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
         margin-bottom: var(--spacing-xs);
+        font-size: 1rem;
     }
     
     header nav ul {
-        gap: var(--spacing-xs);
+        gap: 4px 8px;
     }
     
     header nav a {
-        font-size: 0.7rem;
-        padding: 4px 8px;
+        font-size: 0.65rem;
+        padding: 4px 6px;
         background: var(--color-gray-100);
         border-radius: 4px;
     }
@@ -929,36 +905,42 @@ body > hr {
         display: none;
     }
     
+    header nav a.active {
+        background: var(--color-black);
+        color: var(--color-white);
+    }
+    
     .timeline-wrapper {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
     }
     
     .timeline-horizontal {
-        padding: 150px 20px;
-        gap: 60px;
+        padding: 180px 30px;
+        gap: 80px;
     }
     
     .timeline-item {
-        min-width: 150px;
+        min-width: 140px;
     }
     
     .content {
-        width: 140px;
+        width: 130px;
     }
     
     .content img {
-        height: 100px;
+        height: 80px;
     }
     
     .content p {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        padding: 6px;
     }
     
     .principles-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(7, 100px);
-        gap: 8px;
+        grid-template-rows: repeat(6, 90px);
+        gap: 6px;
     }
     
     .principle-card:nth-child(1) {
@@ -1020,14 +1002,10 @@ body > hr {
         gap: var(--spacing-xs);
     }
     
-    footer ul a::before,
-    footer nav ul li a::before {
-        width: 36px;
-        height: 36px;
-    }
-    
     footer ul a,
+    footer nav ul a,
     footer nav ul li a {
         font-size: 0.6rem;
+        padding: 6px 0;
     }
 }
