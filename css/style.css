@@ -1,7 +1,3 @@
-/* ============================================
-   DIETER RAMS - SISTEMA DE DISEÑO UNIFICADO
-   "Weniger, aber besser" - Menos, pero mejor
-   ============================================ */
 
 :root {
     --color-black: #1a1a1a;
@@ -25,7 +21,7 @@
     --max-width: 1200px;
 }
 
-/* === RESET & BASE === */
+/* RESET & BASE  */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -66,7 +62,7 @@ ul {
     list-style: none;
 }
 
-/* === TIPOGRAFÍA === */
+/*  TIPOGRAFIA  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.2;
@@ -85,7 +81,7 @@ p {
     margin-bottom: var(--spacing-sm);
 }
 
-/* === HEADER === */
+/*  HEADER  */
 header {
     position: sticky;
     top: 0;
@@ -123,7 +119,7 @@ header nav a {
     color: var(--color-gray-500);
 }
 
-/* Página activa en navegación */
+/* Página en navegación */
 header nav a.active {
     color: var(--color-black);
     font-weight: 500;
@@ -163,7 +159,7 @@ header + hr {
     display: none;
 }
 
-/* === MAIN === */
+/* MAIN  */
 main {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -174,7 +170,7 @@ main section {
     margin-bottom: var(--spacing-lg);
 }
 
-/* Títulos centrados en todas las páginas */
+
 main section h2 {
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
@@ -188,7 +184,7 @@ main hr {
     margin: var(--spacing-lg) 0;
 }
 
-/* === PÁGINA INICIO === */
+/*  INICIO  */
 main > section:first-child {
     text-align: center;
     padding: var(--spacing-md) 0;
@@ -223,13 +219,11 @@ main video {
     border: 1px solid var(--color-gray-200);
 }
 
-/* ============================================
-   PÁGINA ABOUT - TIMELINE MEJORADO
-   ============================================ */
+/*     ABOUT  */
+   
 .timeline-section {
     padding: var(--spacing-md) 0;
     width: 100%;
-   /* overflow: hidden;*/
     overflow-x: auto;
     overflow-y: visible; 
 }
@@ -259,7 +253,7 @@ main video {
     flex: 1;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 320px 80px; /* Más altura */
+    padding: 320px 80px;
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -269,7 +263,7 @@ main video {
     display: none;
 }
 
-/* Línea horizontal completa */
+
 .timeline-horizontal::before {
     content: "";
     position: absolute;
@@ -340,7 +334,7 @@ main video {
     margin-top: 60px;
 }
 
-/* Imágenes sin cortar */
+
 .content img {
     width: 100%;
     height: 120px;
@@ -385,27 +379,9 @@ main video {
     color: var(--color-white);
 }
 
-.video-section {
-    text-align: center;
-    padding: var(--spacing-md) 0;
-}
 
-.video-section h2 {
-    border-bottom: none;
-    margin-bottom: var(--spacing-sm);
-}
-
-.video-principal {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    border: 1px solid var(--color-gray-200);
-    border-radius: 4px;
-}
-
-/* ============================================
-   PÁGINA DESIGNS
-   ============================================ */
+/*  DESIGNS  */
+   
 main section h2 + img {
     max-width: 600px;
     margin: var(--spacing-md) auto;
@@ -420,9 +396,15 @@ main section img + p {
     margin-bottom: var(--spacing-md);
 }
 
-/* ============================================
-   PÁGINA PRINCIPLES - GRILLA COMPACTA
-   ============================================ */
+
+
+
+
+
+
+
+/* PRINCIPLES  */
+   
 .principles-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -441,12 +423,15 @@ main section img + p {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+
+
+
 .principle-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Imágenes que ocupan todo el cuadro */
+/* Imágenes ocupan todo  cuadro */
 .principle-card img {
     width: 100%;
     height: 100%;
@@ -466,7 +451,7 @@ main section img + p {
     border-radius: 2px;
 }
 
-/* Grid compacto sin espacios vacíos */
+/* Grid sin espacios  */
 .principle-card:nth-child(1) {
     grid-column: 1 / 5;
     grid-row: 1 / 3;
@@ -517,7 +502,8 @@ main section img + p {
     grid-row: 1 / 4;
 }
 
-/* Detalle del principio */
+
+
 .principle-detail {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -533,6 +519,9 @@ main section img + p {
     color: var(--color-gray-300);
 }
 
+
+
+
 .principle-detail__content h3 {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-xs);
@@ -545,9 +534,8 @@ main section img + p {
     margin-bottom: 0;
 }
 
-/* ============================================
-   PÁGINA PRODUCTS
-   ============================================ */
+/*   PRODUCTS  */
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -627,9 +615,9 @@ main section img + p {
     margin: 0;
 }
 
-/* ============================================
-   FOOTER - SIN CÍRCULOS, SOLO TEXTO
-   ============================================ */
+
+
+/*    FOOTER -  */
 footer {
     border-top: 1px solid var(--color-gray-200);
     padding: var(--spacing-md) var(--spacing-md);
@@ -651,7 +639,7 @@ footer nav ul {
     flex-wrap: wrap;
 }
 
-/* Sin círculos, solo texto */
+
 footer ul a,
 footer nav ul a,
 footer nav ul li a {
@@ -683,7 +671,7 @@ footer nav ul li {
     display: contents;
 }
 
-/* Copyright */
+/*             Copyright                      */
 footer .copyright {
     text-align: center;
     margin-top: var(--spacing-sm);
@@ -697,9 +685,9 @@ body > hr {
     display: none;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+
+
+/* --   RESPONSIVE   --- */
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
