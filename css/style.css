@@ -1,0 +1,1033 @@
+/* ============================================
+   DIETER RAMS - SISTEMA DE DISEÑO UNIFICADO
+   "Weniger, aber besser" - Menos, pero mejor
+   ============================================ */
+
+:root {
+    --color-black: #1a1a1a;
+    --color-white: #ffffff;
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #e5e5e5;
+    --color-gray-300: #d4d4d4;
+    --color-gray-500: #737373;
+    --color-gray-700: #404040;
+    --color-accent: #c41e3a;
+    
+    --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    --max-width: 1200px;
+}
+
+/* === RESET & BASE === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    list-style: none;
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; font-style: italic; }
+h6 { font-size: 0.875rem; font-weight: 500; }
+
+p {
+    max-width: 70ch;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* === HEADER === */
+header {
+    position: sticky;
+    top: 0;
+    background: var(--color-white);
+    border-bottom: 3px solid var(--color-accent);
+    z-index: 1000;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-md);
+}
+
+header nav a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: var(--spacing-xs) 0;
+    position: relative;
+    color: var(--color-gray-700);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-black);
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+header nav a:hover {
+    opacity: 1;
+    color: var(--color-black);
+}
+
+header + hr {
+    display: none;
+}
+
+/* === MAIN === */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+main section {
+    margin-bottom: var(--spacing-xl);
+}
+
+main section h2 {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+main hr {
+    border: none;
+    border-top: 1px solid var(--color-gray-200);
+    margin: var(--spacing-lg) 0;
+}
+
+/* === PÁGINA INICIO === */
+main > section:first-child {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+main > section:first-child img {
+    max-width: 400px;
+    margin: var(--spacing-md) auto;
+    border: 1px solid var(--color-gray-200);
+}
+
+main > section:first-child p {
+    margin: 0 auto var(--spacing-sm);
+    color: var(--color-gray-700);
+}
+
+main section h3 + h5 {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--color-gray-700);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+}
+
+main iframe,
+main video {
+    max-width: 100%;
+    width: 560px;
+    height: 315px;
+    margin: var(--spacing-md) auto;
+    display: block;
+    border: 1px solid var(--color-gray-200);
+}
+
+/* ============================================
+   PÁGINA ABOUT - TIMELINE CORREGIDO
+   ============================================ */
+.timeline-section {
+    padding: var(--spacing-lg) 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+    border-bottom: none;
+}
+
+.timeline-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.timeline-horizontal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 200px 60px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.timeline-horizontal::-webkit-scrollbar {
+    display: none;
+}
+
+/* Línea horizontal que va de extremo a extremo */
+.timeline-horizontal::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 200%;
+    height: 2px;
+    background-color: var(--color-black);
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-black);
+    border: 3px solid var(--color-white);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 0 0 0 2px var(--color-black);
+}
+
+.year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 0.875rem;
+    background-color: var(--color-white);
+    padding: 8px 16px;
+    z-index: 10;
+    border: 2px solid var(--color-black);
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.content {
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    z-index: 5;
+}
+
+.content.top {
+    bottom: 50%;
+    margin-bottom: 50px;
+}
+
+.content.bottom {
+    top: 50%;
+    margin-top: 50px;
+}
+
+.content img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+    margin-bottom: 12px;
+    padding: 10px;
+}
+
+.content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--color-gray-700);
+    background-color: var(--color-gray-50);
+    padding: var(--spacing-xs);
+    border-radius: 4px;
+    margin: 0;
+}
+
+.nav-btn {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-black);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.nav-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.video-section {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.video-section h2 {
+    border-bottom: none;
+    margin-bottom: var(--spacing-md);
+}
+
+.video-principal {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+}
+
+/* ============================================
+   PÁGINA DESIGNS
+   ============================================ */
+main section h2 + img {
+    max-width: 600px;
+    margin: var(--spacing-md) auto;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+}
+
+main section img + p {
+    text-align: center;
+    color: var(--color-gray-500);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   PÁGINA PRINCIPLES - GRILLA COMPLETA
+   ============================================ */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 180px);
+    gap: 12px;
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
+}
+
+.principle-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.principle-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.principle-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    background: var(--color-white);
+}
+
+.principle-card__number {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-gray-500);
+}
+
+/* Grid que ocupa TODO el espacio */
+.principle-card:nth-child(1) {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+}
+
+.principle-card:nth-child(2) {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+.principle-card:nth-child(3) {
+    grid-column: 3 / 5;
+    grid-row: 3 / 4;
+}
+
+.principle-card:nth-child(4) {
+    grid-column: 5 / 7;
+    grid-row: 1 / 2;
+}
+
+.principle-card:nth-child(5) {
+    grid-column: 5 / 7;
+    grid-row: 2 / 3;
+}
+
+.principle-card:nth-child(6) {
+    grid-column: 7 / 9;
+    grid-row: 1 / 2;
+}
+
+.principle-card:nth-child(7) {
+    grid-column: 7 / 9;
+    grid-row: 2 / 3;
+}
+
+.principle-card:nth-child(8) {
+    grid-column: 9 / 11;
+    grid-row: 1 / 2;
+}
+
+.principle-card:nth-child(9) {
+    grid-column: 9 / 11;
+    grid-row: 2 / 3;
+}
+
+.principle-card:nth-child(10) {
+    grid-column: 11 / 13;
+    grid-row: 1 / 2;
+}
+
+/* Llenar espacios vacíos - extender cards */
+.principle-card:nth-child(5) {
+    grid-column: 5 / 7;
+    grid-row: 2 / 4;
+}
+
+.principle-card:nth-child(7) {
+    grid-column: 7 / 9;
+    grid-row: 2 / 4;
+}
+
+.principle-card:nth-child(9) {
+    grid-column: 9 / 11;
+    grid-row: 2 / 4;
+}
+
+.principle-card:nth-child(10) {
+    grid-column: 11 / 13;
+    grid-row: 1 / 4;
+}
+
+/* Detalle del principio */
+.principle-detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.principle-detail__number {
+    font-size: 6rem;
+    font-weight: 200;
+    line-height: 1;
+    color: var(--color-gray-300);
+}
+
+.principle-detail__content h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-black);
+}
+
+.principle-detail__content p {
+    color: var(--color-gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   PÁGINA PRODUCTS - ESTILO WIREFRAME
+   ============================================ */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    overflow: hidden;
+}
+
+.product-card__image-container {
+    position: relative;
+    background: var(--color-gray-50);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-card__image-container img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.product-card__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    transition: all 0.2s ease;
+}
+
+.product-card__nav:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+.product-card__nav--prev {
+    left: 10px;
+}
+
+.product-card__nav--next {
+    right: 10px;
+}
+
+.product-card__content {
+    padding: var(--spacing-sm);
+}
+
+.product-card__title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-black);
+}
+
+.product-card__description {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================================
+   FOOTER - MINIMALISTA ESTILO RAMS
+   ============================================ */
+footer {
+    border-top: 1px solid var(--color-gray-200);
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: var(--color-white);
+}
+
+footer address {
+    display: none;
+}
+
+footer > p {
+    display: none;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul,
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+footer ul a,
+footer nav ul a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 1;
+}
+
+footer ul a:hover,
+footer nav ul a:hover {
+    opacity: 0.6;
+}
+
+/* Círculos para iconos */
+footer ul a::before,
+footer nav ul li a::before {
+    content: '';
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+footer ul a:hover::before,
+footer nav ul li a:hover::before {
+    border-color: var(--color-black);
+}
+
+footer ul a,
+footer nav ul li a {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+footer ul a h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    color: inherit;
+}
+
+footer nav ul li {
+    display: contents;
+}
+
+/* Copyright minimalista */
+footer .copyright {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-gray-100);
+    font-size: 0.7rem;
+    color: var(--color-gray-400);
+}
+
+body > hr {
+    display: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .principles-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 120px);
+    }
+    
+    .principle-card:nth-child(1) {
+        grid-column: 1 / 4;
+        grid-row: 1 / 3;
+    }
+    
+    .principle-card:nth-child(2) {
+        grid-column: 4 / 7;
+        grid-row: 1 / 2;
+    }
+    
+    .principle-card:nth-child(3) {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+    }
+    
+    .principle-card:nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .principle-card:nth-child(5) {
+        grid-column: 3 / 5;
+        grid-row: 3 / 5;
+    }
+    
+    .principle-card:nth-child(6) {
+        grid-column: 5 / 7;
+        grid-row: 3 / 4;
+    }
+    
+    .principle-card:nth-child(7) {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+    }
+    
+    .principle-card:nth-child(8) {
+        grid-column: 5 / 7;
+        grid-row: 4 / 5;
+    }
+    
+    .principle-card:nth-child(9) {
+        grid-column: 1 / 4;
+        grid-row: 5 / 6;
+    }
+    
+    .principle-card:nth-child(10) {
+        grid-column: 4 / 7;
+        grid-row: 5 / 6;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-xl: 4rem;
+    }
+    
+    header {
+        padding: var(--spacing-sm);
+    }
+    
+    header nav ul {
+        gap: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    header nav a {
+        font-size: 0.75rem;
+    }
+    
+    .timeline-horizontal {
+        gap: 80px;
+        padding: 180px 50px;
+    }
+    
+    .timeline-item {
+        min-width: 180px;
+    }
+    
+    .content {
+        width: 160px;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 100px);
+    }
+    
+    .principle-card:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+    
+    .principle-card:nth-child(2) {
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+    }
+    
+    .principle-card:nth-child(3) {
+        grid-column: 3 / 5;
+        grid-row: 2 / 3;
+    }
+    
+    .principle-card:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .principle-card:nth-child(5) {
+        grid-column: 2 / 4;
+        grid-row: 3 / 5;
+    }
+    
+    .principle-card:nth-child(6) {
+        grid-column: 4 / 5;
+        grid-row: 3 / 4;
+    }
+    
+    .principle-card:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    
+    .principle-card:nth-child(8) {
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+    }
+    
+    .principle-card:nth-child(9) {
+        grid-column: 1 / 3;
+        grid-row: 5 / 6;
+    }
+    
+    .principle-card:nth-child(10) {
+        grid-column: 3 / 5;
+        grid-row: 5 / 6;
+    }
+    
+    .principle-detail {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .principle-detail__number {
+        font-size: 4rem;
+    }
+    
+    footer ul,
+    footer nav ul {
+        gap: var(--spacing-sm);
+    }
+    
+    footer ul a::before,
+    footer nav ul li a::before {
+        width: 40px;
+        height: 40px;
+    }
+    
+    footer ul a,
+    footer nav ul li a {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    header nav ul {
+        gap: var(--spacing-xs);
+    }
+    
+    header nav a {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        background: var(--color-gray-100);
+        border-radius: 4px;
+    }
+    
+    header nav a::after {
+        display: none;
+    }
+    
+    .timeline-wrapper {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .timeline-horizontal {
+        padding: 150px 20px;
+        gap: 60px;
+    }
+    
+    .timeline-item {
+        min-width: 150px;
+    }
+    
+    .content {
+        width: 140px;
+    }
+    
+    .content img {
+        height: 100px;
+    }
+    
+    .content p {
+        font-size: 0.7rem;
+    }
+    
+    .principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 100px);
+        gap: 8px;
+    }
+    
+    .principle-card:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+    
+    .principle-card:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .principle-card:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .principle-card:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    
+    .principle-card:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+    
+    .principle-card:nth-child(6) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+    
+    .principle-card:nth-child(7) {
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+    }
+    
+    .principle-card:nth-child(8) {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+    }
+    
+    .principle-card:nth-child(9) {
+        grid-column: 2 / 3;
+        grid-row: 6 / 7;
+    }
+    
+    .principle-card:nth-child(10) {
+        grid-column: 1 / 3;
+        grid-row: 7 / 8;
+    }
+    
+    .principle-detail__number {
+        font-size: 3rem;
+    }
+    
+    footer ul,
+    footer nav ul {
+        gap: var(--spacing-xs);
+    }
+    
+    footer ul a::before,
+    footer nav ul li a::before {
+        width: 36px;
+        height: 36px;
+    }
+    
+    footer ul a,
+    footer nav ul li a {
+        font-size: 0.6rem;
+    }
+}

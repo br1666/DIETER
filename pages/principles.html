@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dieter Rams | Principios</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>RAMS</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./about.html">Sobre Dieter Rams</a></li>
+                <li><a href="./designs.html">Diseños</a></li>
+                <li><a href="#">Principios</a></li>
+                <li><a href="./product.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Los 10 principios del buen diseño</h2>
+
+            <!-- Grilla Mural de Principios -->
+            <div class="principles-grid">
+                <div class="principle-card" data-principle="1">
+                    <span class="principle-card__number">1</span>
+                    <img src="../img/Principles_1.png" alt="Es innovador">
+                </div>
+                <div class="principle-card" data-principle="2">
+                    <span class="principle-card__number">2</span>
+                    <img src="../img/Principles_2.png" alt="Es útil">
+                </div>
+                <div class="principle-card" data-principle="3">
+                    <span class="principle-card__number">3</span>
+                    <img src="../img/Principles_3.png" alt="Es estético">
+                </div>
+                <div class="principle-card" data-principle="4">
+                    <span class="principle-card__number">4</span>
+                    <img src="../img/Principles_4.png" alt="Hace comprensible">
+                </div>
+                <div class="principle-card" data-principle="5">
+                    <span class="principle-card__number">5</span>
+                    <img src="../img/Principles_5.png" alt="Es honesto">
+                </div>
+                <div class="principle-card" data-principle="6">
+                    <span class="principle-card__number">6</span>
+                    <img src="../img/Principles_6.png" alt="Es discreto">
+                </div>
+                <div class="principle-card" data-principle="7">
+                    <span class="principle-card__number">7</span>
+                    <img src="../img/Principles_7.png" alt="Es duradero">
+                </div>
+                <div class="principle-card" data-principle="8">
+                    <span class="principle-card__number">8</span>
+                    <img src="../img/Principles_8.png" alt="Es detallista">
+                </div>
+                <div class="principle-card" data-principle="9">
+                    <span class="principle-card__number">9</span>
+                    <img src="../img/Principles_9.png" alt="Respeta el medio ambiente">
+                </div>
+                <div class="principle-card" data-principle="10">
+                    <span class="principle-card__number">10</span>
+                    <img src="../img/Principles_10.png" alt="Es mínimo">
+                </div>
+            </div>
+
+            <!-- Detalle del Principio -->
+            <div class="principle-detail" id="principle-detail">
+                <span class="principle-detail__number" id="detail-number">1</span>
+                <div class="principle-detail__content">
+                    <h3 id="detail-title">Es innovador</h3>
+                    <p id="detail-text">Es improbable agotar las posibilidades a la hora de innovar en el diseño debido a las constantes oportunidades que brinda el acelerado desarrollo tecnológico.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <a href="https://facebook.com/dieter.rams" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://tiktok.com/@dieter" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.instagram.com/dieter.rams" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="mailto:info@dieter-rams.com">Mail</a>
+            <a href="https://www.x.com/dieter" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.linkedin.com/in/dieter-rams" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/@dieter" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.pinterest.com/dieter.rams" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </ul>
+        <p class="copyright">© 2025 Dieter Rams</p>
+    </footer>
+
+    <script>
+        const principlesData = {
+            1: {
+                title: "Es innovador",
+                text: "Es improbable agotar las posibilidades a la hora de innovar en el diseño debido a las constantes oportunidades que brinda el acelerado desarrollo tecnológico."
+            },
+            2: {
+                title: "Es útil",
+                text: "Debe hacer que el producto sea funcional y práctico."
+            },
+            3: {
+                title: "Es estético",
+                text: "El diseño bien ejecutado no carece de belleza. La calidad estética de un producto forma parte integral de su utilidad ya que los productos utilizados cotidianamente tienden a tener un efecto indirecto en las personas y su bienestar."
+            },
+            4: {
+                title: "Hace a un producto comprensible",
+                text: "Un buen diseño simplifica la estructura del producto y lo predispone a expresar claramente su función mediante la simple intuición del usuario."
+            },
+            5: {
+                title: "Es honesto",
+                text: "Un diseño honesto nunca intenta falsificar el auténtico valor e innovación del producto. Asimismo un diseño honesto no trata de manipular al consumidor mediante promesas de una falsa utilidad más allá de la realidad física del producto."
+            },
+            6: {
+                title: "Es discreto",
+                text: "Todo producto y su diseño debe de ser neutro y sobrio. Su sobriedad y neutralidad tienen como objetivo el proveer un espacio de expresión para el usuario."
+            },
+            7: {
+                title: "Es anacrónicamente duradero",
+                text: "Toda moda es inherente pasajera y subjetiva. La correcta ejecución del buen diseño da como resultado productos inherentemente objetivos y anacrónicamente útiles."
+            },
+            8: {
+                title: "Concibe exhaustivamente hasta el último detalle",
+                text: "Un buen diseño nunca deja nada al azar dado que el cuidado y la exhaustiva precisión de cada detalle expresa el respeto de los diseñadores para con sus consumidores."
+            },
+            9: {
+                title: "Respeta el medio ambiente",
+                text: "Un buen diseño debe de contribuir significativamente a la preservación del medio ambiente mediante la conservación de los recursos y la minimización de la contaminación física y visual durante el ciclo de vida del producto."
+            },
+            10: {
+                title: "Es diseño en su mínima expresión",
+                text: "Rams distingue entre el habitual paradigma de diseño: \"Menos es más\" y en su lugar recomienda \"Menos, pero con mejor ejecución\"."
+            }
+        };
+
+        const cards = document.querySelectorAll('.principle-card');
+        const detailNumber = document.getElementById('detail-number');
+        const detailTitle = document.getElementById('detail-title');
+        const detailText = document.getElementById('detail-text');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const num = card.dataset.principle;
+                const data = principlesData[num];
+                
+                detailNumber.textContent = num;
+                detailTitle.textContent = data.title;
+                detailText.textContent = data.text;
+                
+                document.getElementById('principle-detail').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
