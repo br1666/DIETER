@@ -1,0 +1,73 @@
+
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.designs-intro {
+    margin-bottom: v.$espacio-xl;
+
+    p {
+        font-size: 1.1rem;
+        color: v.$color-gris-texto;
+        line-height: 1.8;
+    }
+}
+
+
+.design-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$espacio-xl;
+    align-items: center;
+    margin-bottom: v.$espacio-xl;
+    padding-bottom: v.$espacio-xl;
+    border-bottom: 1px solid v.$color-gris-borde;
+
+    &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+
+    &--invertido {
+        .design-block__imagen {
+            order: 2;
+
+            @include m.responsive(mobile) {
+                order: 0;
+            }
+        }
+    }
+
+    @include m.responsive(mobile) {
+        grid-template-columns: 1fr;
+        gap: v.$espacio-md;
+    }
+
+    &__imagen {
+        img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    }
+
+    &__contenido {
+        h2 {
+            margin-bottom: v.$espacio-sm;
+        }
+
+        h3 {
+            color: v.$color-acento;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: v.$espacio-sm;
+            font-weight: 500;
+        }
+
+        p {
+            color: v.$color-gris-texto;
+            line-height: 1.8;
+        }
+    }
+}

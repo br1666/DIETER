@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Los 10 principios del buen diseño según Dieter Rams.">
+    <title>Dieter Rams | Los 10 principios del buen diseño</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <p class="logo">RAMS</p>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./about.html">Sobre Dieter</a></li>
+                <li><a href="./designs.html">Diseños</a></li>
+                <li><a href="#" class="active">Principios</a></li>
+                <li><a href="./product.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Los 10 principios del buen diseño</h1>
+            <div class="principles-intro">
+                <p>
+                    A lo largo de su carrera en Braun, Dieter Rams se preguntó si su trabajo era buen diseño.
+                    La respuesta fue estos diez principios. Hacé clic en cada imagen para leer el principio.
+                </p>
+            </div>
+
+            
+            <div class="principles-grid">
+                <div class="principle-card" data-principle="1">
+                    <span class="principle-card__number">1</span>
+                    <img src="../img/Principles_1.png" alt="Principio 1: El buen diseño es innovador, imagen de producto Braun que representa la innovación.">
+                </div>
+                <div class="principle-card" data-principle="2">
+                    <span class="principle-card__number">2</span>
+                    <img src="../img/Principles_2.png" alt="Principio 2: El buen diseño hace útil al producto, imagen representativa de la utilidad en diseño.">
+                </div>
+                <div class="principle-card" data-principle="3">
+                    <span class="principle-card__number">3</span>
+                    <img src="../img/Principles_3.png" alt="Principio 3: El buen diseño es estético, imagen de producto Braun que ejemplifica la estética funcional.">
+                </div>
+                <div class="principle-card" data-principle="4">
+                    <span class="principle-card__number">4</span>
+                    <img src="../img/Principles_4.png" alt="Principio 4: El buen diseño hace comprensible al producto, imagen que ilustra la claridad de uso.">
+                </div>
+                <div class="principle-card" data-principle="5">
+                    <span class="principle-card__number">5</span>
+                    <img src="../img/Principles_5.png" alt="Principio 5: El buen diseño es honesto, imagen que representa la honestidad en los materiales y formas.">
+                </div>
+                <div class="principle-card" data-principle="6">
+                    <span class="principle-card__number">6</span>
+                    <img src="../img/Principles_6.png" alt="Principio 6: El buen diseño es discreto, imagen de producto neutro y sobrio de Braun.">
+                </div>
+                <div class="principle-card" data-principle="7">
+                    <span class="principle-card__number">7</span>
+                    <img src="../img/Principles_7.png" alt="Principio 7: El buen diseño es duradero, imagen de producto Braun que sigue vigente décadas después.">
+                </div>
+                <div class="principle-card" data-principle="8">
+                    <span class="principle-card__number">8</span>
+                    <img src="../img/Principles_8.png" alt="Principio 8: El buen diseño es detallista, imagen que muestra el cuidado en cada detalle de diseño.">
+                </div>
+                <div class="principle-card" data-principle="9">
+                    <span class="principle-card__number">9</span>
+                    <img src="../img/Principles_9.png" alt="Principio 9: El buen diseño respeta el medio ambiente, imagen sobre sostenibilidad y ciclo de vida del producto.">
+                </div>
+                <div class="principle-card" data-principle="10">
+                    <span class="principle-card__number">10</span>
+                    <img src="../img/Principles_10.png" alt="Principio 10: El buen diseño es mínimo, imagen que representa la filosofía menos pero mejor de Rams.">
+                </div>
+            </div>
+
+            
+            <div class="principle-detail" id="principle-detail" aria-live="polite">
+                <span class="principle-detail__number" id="detail-number">1</span>
+                <div class="principle-detail__content">
+                    <h3 id="detail-title">Es innovador</h3>
+                    <p id="detail-text">Es improbable agotar las posibilidades a la hora de innovar en el diseño debido a las constantes oportunidades que brinda el acelerado desarrollo tecnológico.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <ul class="footer-redes" aria-label="Redes sociales">
+                <li><a href="https://facebook.com/dieter.rams" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://tiktok.com/@dieter" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                <li><a href="https://www.instagram.com/dieter.rams" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="mailto:info@dieter-rams.com">Mail</a></li>
+                <li><a href="https://www.x.com/dieter" target="_blank" rel="noopener noreferrer">X</a></li>
+                <li><a href="https://www.linkedin.com/in/dieter-rams" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://www.youtube.com/@dieter" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                <li><a href="https://www.pinterest.com/dieter.rams" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+            </ul>
+            <p class="copyright">© 2026 — Lago Puelo, Chubut</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        const principlesData = {
+            1: { title: "Es innovador", text: "Es improbable agotar las posibilidades a la hora de innovar en el diseño debido a las constantes oportunidades que brinda el acelerado desarrollo tecnológico." },
+            2: { title: "Hace útil al producto", text: "Un producto se compra para ser utilizado. Debe satisfacer criterios funcionales, psicológicos y estéticos. El buen diseño enfatiza la utilidad del producto mientras descarta cualquier elemento que pueda ir en su detrimento." },
+            3: { title: "Es estético", text: "La calidad estética de un producto forma parte integral de su utilidad, ya que los productos utilizados cotidianamente tienen un efecto directo en las personas y su bienestar." },
+            4: { title: "Hace comprensible al producto", text: "Un buen diseño simplifica la estructura del producto y lo predispone a expresar claramente su función mediante la simple intuición del usuario. En el mejor de los casos, es auto-explicativo." },
+            5: { title: "Es honesto", text: "Un diseño honesto nunca intenta falsificar el auténtico valor e innovación del producto. Tampoco trata de manipular al consumidor mediante promesas de una falsa utilidad más allá de la realidad física del producto." },
+            6: { title: "Es discreto", text: "Todo producto y su diseño debe de ser neutro y sobrio. Su sobriedad y neutralidad tienen como objetivo proveer un espacio de expresión para el usuario." },
+            7: { title: "Es anacrónticamente duradero", text: "Toda moda es inherentemente pasajera y subjetiva. La correcta ejecución del buen diseño da como resultado productos inherentemente objetivos y anacrónicamente útiles." },
+            8: { title: "Concibe exhaustivamente hasta el último detalle", text: "Un buen diseño nunca deja nada al azar dado que el cuidado y la exhaustiva precisión de cada detalle expresa el respeto de los diseñadores para con sus consumidores." },
+            9: { title: "Respeta el medio ambiente", text: "Un buen diseño debe contribuir significativamente a la preservación del medio ambiente mediante la conservación de los recursos y la minimización de la contaminación física y visual durante el ciclo de vida del producto." },
+            10: { title: "Es diseño en su mínima expresión", text: "Menos, pero mejor. Rams recomienda 'menos, pero con mejor ejecución'. La pureza concentra lo esencial; lo que no sirve no debe estar." }
+        };
+
+        const cards = document.querySelectorAll('.principle-card');
+        const detailNumber = document.getElementById('detail-number');
+        const detailTitle = document.getElementById('detail-title');
+        const detailText = document.getElementById('detail-text');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+        
+                cards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+
+                const num = card.dataset.principle;
+                const data = principlesData[num];
+
+                detailNumber.textContent = num;
+                detailTitle.textContent = data.title;
+                detailText.textContent = data.text;
+
+                document.getElementById('principle-detail').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

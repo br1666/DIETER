@@ -1,0 +1,50 @@
+
+@use 'variables' as v;
+@use 'mixins' as m;
+
+footer {
+    background-color: v.$color-negro;
+    color: v.$color-blanco;
+    padding: v.$espacio-lg v.$espacio-md;
+    margin-top: v.$espacio-xl;
+
+    .footer-inner {
+        @include m.contenedor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: v.$espacio-md;
+    }
+
+
+    .footer-redes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: v.$espacio-sm;
+
+        li {
+            a {
+                font-size: 0.8rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: rgba(v.$color-blanco, 0.7);
+                transition: color v.$transicion-base;
+
+                &:hover {
+                    color: v.$color-blanco;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+    .copyright {
+        font-size: 0.75rem;
+        color: rgba(v.$color-blanco, 0.5);
+        letter-spacing: 0.05em;
+        max-width: none;
+        margin-bottom: 0;
+    }
+}

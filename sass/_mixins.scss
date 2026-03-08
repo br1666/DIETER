@@ -1,0 +1,75 @@
+
+
+
+
+@use 'variables' as v;
+
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: #{v.$bp-tablet - 1px}) {
+            @content;
+        }
+    } @else if $breakpoint == tablet {
+        @media (min-width: #{v.$bp-tablet}) and (max-width: #{v.$bp-desktop - 1px}) {
+            @content;
+        }
+    } @else if $breakpoint == desktop {
+        @media (min-width: #{v.$bp-desktop}) {
+            @content;
+        }
+    } @else if $breakpoint == tablet-up {
+        @media (min-width: #{v.$bp-tablet}) {
+            @content;
+        }
+    }
+}
+
+
+@mixin contenedor {
+    max-width: v.$ancho-maximo;
+    margin-inline: auto;
+    padding-inline: v.$espacio-md;
+
+    @include responsive(mobile) {
+        padding-inline: v.$espacio-sm;
+    }
+}
+
+
+@mixin flex-centrado($direction: row, $gap: v.$espacio-sm) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+
+
+@mixin boton-base($bg: v.$color-negro, $color: v.$color-blanco) {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: $bg;
+    color: $color;
+    border: 2px solid $bg;
+    font-family: v.$fuente-principal;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: v.$transicion-base;
+    text-decoration: none;
+
+    &:hover {
+        background-color: transparent;
+        color: $bg;
+    }
+}
+
+
+@mixin truncar-texto($lineas: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lineas;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
